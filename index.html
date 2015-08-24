@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width">
+
+	<title>IntuCalc - The Intuitive Calculator</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+
+	<nav>
+    
+    	<h1>IntuCalc</h1>
+        
+        <p class="navbutton" id="settings">Settings</p>
+        
+        <p class="navbutton" id="info">Info</p>
+        
+       <div id="settingswrapper">
+       	
+        	<h2>Settings</h2>
+        
+        	<label for="decimals">Decimals:</label><br>
+            
+            <input id="decimals" type="tel" maxlength="1">
+            
+       </div> <!-- / settingswrapper -->
+       
+      	 <div id="infowrapper">
+       
+       		<h2>Using IntuCalc</h2>
+            
+            <p>A dotted line</p>
+            
+           	<div style="height: 1.8em; width: 15em;">
+            
+				<svg viewBox="0 0 80 10" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <line stroke="black" x1="10%" y1="50%" x2="90%" y2="50%" stroke-dasharray="3, 3"></line>
+                </svg>
+            
+            </div>
+            
+            <p>shows what is calculated in a box.</p><br>
+            
+            <p>A solid line</p>
+            
+            <div style="height: 1.8em; width: 15em;">
+            
+				<svg viewBox="0 0 80 10" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <line stroke="black" x1="10%" y1="50%" x2="90%" y2="50%"></line>
+                </svg>
+                
+            </div>
+            
+            <p>shows which value you are asked for in a box.</p><br>
+            
+            <p>A gray dotted line</p>
+            
+            <div style="height: 1.8em; width: 15em;">
+            
+				<svg viewBox="0 0 80 10" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <line stroke="lightgray" x1="10%" y1="50%" x2="90%" y2="50%" stroke-dasharray="3, 3"></line>
+                </svg>
+            
+            </div>
+            
+            <p>shows additional shapes for informative purposes</p><br>
+            
+            <p>Legend:</p>
+            
+            <p>
+            
+            	C = Circumference<br>
+                r = Radius<br>
+                D = Diameter<br>
+            
+            </p>
+       
+      	 </div> <!-- / infowrapper -->
+    
+    </nav>
+
+	<div id="wrapper"> <!-- Calculator boxes -->
+    
+    	<div class="box"> <!-- Circumference from radius -->
+        
+        	<div class="description">
+                
+                <svg viewBox="0 0 120 120" version="1.1"
+      xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" fill="none" stroke-dasharray="3, 3" stroke="black"/>
+					<circle cx="60" cy="60" r="2" fill="black" stroke="black"/>
+                    <line stroke="black" x1="60" y1="60" x2="25" y2="25"></line>
+                </svg>
+                
+                <p id="circFromRadOutput" class="output">C=<span>0</span></p>
+            
+            </div>
+            
+            <input type="number" id="circFromRadInput" placeholder="radius">  
+        
+		</div> <!-- / Circumference from radius -->
+
+        <div class="box"> <!-- Radius from circumference -->
+        
+        	<div class="description">
+                
+                <svg viewBox="0 0 120 120" version="1.1"
+      xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="black"/>
+					<circle cx="60" cy="60" r="2" fill="black" stroke="black"/>
+                    <line stroke="black" stroke-dasharray="3, 3" x1="60" y1="60" x2="25" y2="25"></line>
+                </svg>
+                
+                <p id="radFromCircOutput" class="output">r=<span>0</span></p>
+            
+            </div>
+            
+            <input type="tel" id="radFromCircInput" placeholder="circumference">  
+        
+		</div> <!-- / Radius from circumference -->
+        
+        <div class="box"> <!-- Diameter from radius -->
+        
+        	<div class="description">
+                
+                <svg viewBox="0 0 120 120" version="1.1"
+      xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="lightgray" stroke-dasharray="3, 3"/>
+					<circle cx="60" cy="60" r="2" fill="black" stroke="black"/>
+                    <line stroke="black" x1="60" y1="60" x2="25" y2="25"></line>
+					<line stroke="black" x1="95" y1="25" x2="25" y2="95" stroke-dasharray="3, 3"></line>
+                </svg>
+                
+                <p id="diaFromRadOutput" class="output rotate">D=<span>0</span></p>
+            
+            </div>
+            
+            <input type="number" id="diaFromRadInput" placeholder="radius">  
+        
+		</div> <!-- / Diameter from radius -->
+        
+        <div class="box"> <!-- Radius from diameter -->
+        
+        	<div class="description">
+                
+                <svg viewBox="0 0 120 120" version="1.1"
+      xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="lightgray" stroke-dasharray="3, 3"/>
+					<circle cx="60" cy="60" r="2" fill="black" stroke="black"/>
+                    <line stroke="black" x1="60" y1="60" x2="25" y2="25" stroke-dasharray="3, 3"></line>
+					<line stroke="black" x1="95" y1="25" x2="25" y2="95"></line>
+                </svg>
+                
+                <p id="radFromDiaOutput" class="output rotate">r=<span>0</span></p>
+            
+            </div>
+            
+            <input type="number" id="radFromDiaInput" placeholder="diameter">  
+        
+		</div> <!-- / Radius from diameter -->
+ 
+        <div style="clear: both;"></div>
+    
+    </div> <!-- / Calculator boxes -->
+    
+    <footer>
+    
+    	<p style="text-align: right; padding-right: 0.3em;">&copy; 2014 </p>
+    
+    </footer>
+    
+    <script src="js/jquery-2.1.1.js"></script>
+    
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
